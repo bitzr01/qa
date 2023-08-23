@@ -1,0 +1,11 @@
+FROM node:14
+
+WORKDIR /Users/yponsen/Projects/qa
+
+COPY package*.json ./
+
+RUN yarn 
+
+COPY . .
+
+CMD [ "node", "index.js" ]

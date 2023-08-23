@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  microservice:
+    build: 
+      context: .
+      dockerfile: DockerFile.microservice
+    ports:
+      - "3000:3000"
+  tests:
+    build:
+      context: .
+      dockerfile: DockerFile.tests
+    depends_on:
+      - microservice
